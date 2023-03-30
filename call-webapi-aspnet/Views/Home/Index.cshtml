@@ -1,9 +1,35 @@
-﻿@{
+﻿
+@model IEnumerable<Burger>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="kortit">
+
+
+    @foreach (var item in Model)
+    {
+                <article class="card">
+                    <figure>
+                        <img src="@item.image" class="card-img-top">
+                    </figure>
+                    <div class="card-body">
+                        <h5 class="card-title">@item.id - @item.title</h5>
+                        <p class="card-text">@item.information</p>
+                        <hr />
+                        <p class="card-text">Täytteet</p>
+                        <p class="card-text">@item.description.</p>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="#" class="btn btn-primary">Osta</a>
+                            <p class="card-text"><small class="text-muted">@item.category</small></p>
+
+                        </div>
+
+                    </div>
+                </article>
+    }
+
+</section>
 
