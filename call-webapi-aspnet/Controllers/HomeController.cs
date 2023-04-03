@@ -11,16 +11,16 @@ public class HomeController : Controller
 
         public async Task<IActionResult> Index()
         {
-            List<Burger> boatList = new List<Burger>();
+            List<Burger> burgerList = new List<Burger>();
             using (var httpClient = new HttpClient())
             {
                 using (var response = await httpClient.GetAsync("https://raw.githubusercontent.com/gittjar/products/main/db_burger.json"))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    boatList = JsonConvert.DeserializeObject<List<Burger>>(apiResponse);
+                    burgerList = JsonConvert.DeserializeObject<List<Burger>>(apiResponse);
                 }
             }
-            return View(boatList);
+            return View(burgerList);
         }
     }
 
