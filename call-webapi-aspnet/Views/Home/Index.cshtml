@@ -2,37 +2,38 @@
 @model IEnumerable<Burger>
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Burger's Home";
 }
 
 <section class="kortit">
 
-
     @foreach (var item in Model)
     {
-                <article class="card">
-                    <figure>
-                        <img src="@item.image" class="card-img-top">
-                    </figure>
-                    <div class="card-body">
-                        <h5 class="card-title">@item.id - @item.title</h5>
-                        <p class="card-text">@item.information</p>
-                        <hr />
-                        
-                        <p class="card-text">@item.description.</p>
-                        <b class="card-text">@item.hinta €</b>
 
-                        <hr />
+        <article class="card">
+            <figure>
+                <img src="@item.image" class="card-img-top">
+            </figure>
+            <div class="card-body">
+                <h5 class="card-title">@item.id - @item.title</h5>
+                <p class="card-text">@item.information</p>
+                <hr />
 
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="btn btn-primary">Osta</a>
-                            <p class="card-text"><small class="text-muted">@item.category</small></p>
+                <p class="card-text">@item.description.</p>
+                <b class="card-text">@item.hinta €</b>
 
-                        </div>
+                <hr />
 
-                    </div>
-                </article>
-    }
+                <div class="d-flex justify-content-between">
+                    <a href="#" class="btn btn-primary">Osta</a>
+                    <p class="card-text"><small class="text-muted">@item.category</small></p>
 
-</section>
+                </div>
 
+            </div>
+        </article>
+
+        }
+    </section>
+
+  
